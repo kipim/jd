@@ -33,9 +33,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Update data file
-        run: sed -i 's@<p id="myname"></p>@<p id="myname">${{ env.MY_SECRET_NAME }}</p>@g' index.html
+        run: sed -i 's@<p id="myname"></p>@<p id="myname">${{ vars.MY_SECRET_NAME }}</p>@g' index.html
       - name: Print data file  
-        run: echo ${{ env.MY_SECRET_NAME }}
+        run: echo ${{ vars.MY_SECRET_NAME }}
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
